@@ -30,6 +30,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      // Global varibale that is defined and can be used in the application
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -6,6 +6,8 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+// Pipeline basically means that when
+// a request comes to an application, how do you want to process that?
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -14,14 +16,15 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+// It will configure all static files in wwwroot
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
 
+// Routing in MVC
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+    pattern: "{controller=Home}/{action=Index}/{id?}"); // ? means Nullable
 app.Run();

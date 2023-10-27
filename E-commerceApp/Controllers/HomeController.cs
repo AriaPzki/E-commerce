@@ -1,5 +1,6 @@
 using E_commerceApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Diagnostics;
 
 namespace E_commerceApp.Controllers
@@ -13,8 +14,13 @@ namespace E_commerceApp.Controllers
             _logger = logger;
         }
 
+        // Action Methods
+        // An action result is one of the custom classes or rather interface
+        // that is implemented in the..Net framework and that basically
+        // implements all of the possible result type for an action method.
         public IActionResult Index()
         {
+            // if leave it empty, it will use Action method name
             return View();
         }
 
