@@ -1,7 +1,16 @@
+// Whenever we have to register something, we will do that in Program.cs
+using E_commerceApp.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//adding Entity FrameWork Core in order to use DBContext
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+// We have added dbcontext to our container.We also want to configure some option.
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 var app = builder.Build();
 
