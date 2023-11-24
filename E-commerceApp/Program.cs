@@ -1,5 +1,7 @@
 // Whenever we have to register something, we will do that in Program.cs
-using E_commerceApp.Data;
+using E_commerce.DataAccess.Data;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.DotNet.Scaffolding.Shared.ProjectModel;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,3 +39,13 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"); // ? means Nullable
 app.Run();
+
+
+//  different service lifetimes in dependency injection:
+//TRANSIENT : basically means that whenever we want any implementation,create a new object, and give that new object.
+//You never have to reuse an existing object.Every time a service is requested,a new implementation is created.
+// SCOPED: where it depends on the HTTP request. So whenever an HTTP request is sent to the server, that time for that scope,
+// one lifetime will be created, and then the same object or same service is used wherever in that request the service is requested.
+// So let's say for one single page load, we are calling a service 10 times. It'll only create that object one time, and it'll use that same object 10 times in that one request.
+// SINGLETON : singleton, where one implementation is created for the lifetime of the application.
+

@@ -1,8 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
+﻿using Microsoft.EntityFrameworkCore.Migrations; 
 #nullable disable
 
-namespace E_commerceApp.Migrations
+namespace E_commerce.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class addCategoryTableToDb : Migration

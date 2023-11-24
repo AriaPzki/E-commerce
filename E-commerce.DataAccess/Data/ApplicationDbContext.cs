@@ -7,11 +7,14 @@
 // Anything that we have to do with our database is inside application.DB Context,
 // because that is where we have. DB Context, which uses entity framework core.
 
-using E_commerceApp.Models;
+
+// In Tier-Architecture -> That will be Bulky.Models but Bulky.Models is not accessible here so we will have to right-click here.
+// Add project reference and we want to add models and utility project. With that
+using E_commerce.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace E_commerceApp.Data
+namespace E_commerce.DataAccess.Data
 {
     // That DB Context class is basically the root class of entity framework
     // core using which we will be accessing entity framework.

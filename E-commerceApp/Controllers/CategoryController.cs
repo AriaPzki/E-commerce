@@ -1,5 +1,5 @@
-﻿using E_commerceApp.Data;
-using E_commerceApp.Models;
+﻿using E_commerce.DataAccess.Data;
+using E_commerce.Models;
 using Humanizer;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.ContentModel;
